@@ -19,7 +19,15 @@ class LandingController extends Controller
         return view('register_account');
     }
 
-    function register_workspace() {
+    public function register_workspace() {
         return view('register_workspace');
+    }
+
+    public function forgot_password() {
+        return view('forgot_password');
+    }
+
+    public function change_password() {
+        return view('change_password');
     }
 }
