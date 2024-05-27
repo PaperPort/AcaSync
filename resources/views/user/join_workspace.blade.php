@@ -45,7 +45,7 @@
                 </div>
                 <div class="border-t-2 pt-2 border-gray-200 flex justify-end mt-4 md:mt-6">
                     <button data-modal-target="authentication-join-workspace-modal" data-modal-toggle="authentication-join-workspace-modal" class="block text-blue outline outline-blue outline-1 hover:bg-sky hover:text-white hover:outline-none focus:ring-4 focus:outline-none focus:ring-sky font-medium rounded-full text-sm px-5 py-2.5 text-center" type="button">
-                        Ikuti
+                        Gabung
                     </button>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                             <label for="kode_masuk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kode Masuk</label>
                             <input type="text" name="kode_masuk" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5"required />
                         </div>
-                        <button type="submit" class="w-full text-white bg-blue hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ikuti Workspace</button>
+                        <button type="submit" class="w-full text-white bg-blue hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center">Gabung ke Workspace</button>
                     </form>
                 </div>
             </div>

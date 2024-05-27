@@ -18,3 +18,4 @@ Route::get('/change-password', $controller_path . '\front_page\WelcomeController
 Route::get('/personal-landing', $controller_path . '\user_page\UserController@landing');
 Route::get('/personal-profile', $controller_path . '\user_page\UserController@profile');
 Route::get('/join-workspace', $controller_path . '\workspace\WorkspaceController@join');
+Route::get('/join-workspace/code', $controller_path . '\workspace\WorkspaceController@join_code');
