@@ -5,7 +5,7 @@ namespace App\Http\Controllers\front_page;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LandingController extends Controller
+class WelcomeController extends Controller
 {
     public function index() {
         return view('welcome');
