@@ -14,4 +14,8 @@ class WorkspaceController extends Controller
     public function join_code() {
         return view('user.join_code');
     }
+
+    public function dashboard() {
+        return view('user.dahboard_workspace');
+    }
 }

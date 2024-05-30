@@ -32,7 +32,7 @@
                     
                 </div>
                 <div class="border-t-2 pt-2 border-gray-200 flex justify-end mt-4 md:mt-6">
-                    <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Masuk</a>
+                    <a href="{{'/id-workspace/dashboard'}}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Masuk</a>
                 </div>
             </div>
         </div>
