@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // solving THAT 419 BASTARD
+        $middleware->validateCsrfTokens(except: [
+            'livewire/*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
