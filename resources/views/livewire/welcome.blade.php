@@ -59,105 +59,67 @@
         <div class="px-10 text-center" intersect="animate-fade-down animate-ease-out animate-duration-[900ms] animate-delay-300">
             <h2 class="text-3xl font-bold text-white font-heading text-gray-90">Pertanyaan yang Sering Diajukan</h2>
         </div>
-        <div class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:py-24 lg:px-24">
-            <div class="col-span-2 space-y-8 lg:grid lg:grid-cols-2 lg:gap-2 lg:space-y-0">
-                <div id="accordion-arrow-icon" class="rounded" data-accordion="open" intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
+        <div class="items-center max-w-screen-xl px-4 py-8 mx-auto  lg:gap-2 lg:px-24">
+                <div id="accordion-arrow-icon" class="rounded mb-2" data-accordion="open" intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
                     <div>
                         <h2 id="accordion-arrow-icon-heading-1" class="text-white focus:text-blue">
                             <button type="button" class="flex items-center w-full p-5 font-medium text-white border border-gray-200 rtl:text-left focus:text-blue hover:bg-gray hover:bg-gray-300 hover:text-blue" data-accordion-target="#accordion-arrow-icon-body-1" aria-expanded="false" aria-controls="accordion-arrow-icon-body-1">
                                 <i class="fa-solid fa-circle-plus"></i>
-                                <span class="ml-2">Accordion with another icon</span>
+                                <span class="ml-2 text-left">Apa itu AcaSync?</span>
                             </button>
                         </h2>
                         <div id="accordion-arrow-icon-body-1" class="hidden" aria-labelledby="accordion-arrow-icon-heading-1">
                             <div class="p-5 bg-gray-100 border border-gray-200">
-                            <p class="mb-2">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p>Check out the <a href="https://flowbite.com/figma/" class="hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                            <p class="mb-2 text-justify">AcaSync adalah platform manajemen pembelajaran yang menyediakan fitur pemantauan akademik siswa secara komprehensif. Aplikasi ini membantu admin, guru, siswa, dan orang tua dalam mengelola dan memantau proses belajar-mengajar serta capaian akademik.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="accordion-arrow-icon-2" class="rounded" data-accordion="open" intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
+                <div id="accordion-arrow-icon-2" class="rounded mb-2" data-accordion="open" intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
                     <div>
                         <h2 id="accordion-arrow-icon-heading-2" class="text-white focus:text-blue">
                             <button type="button" class="flex items-center w-full p-5 font-medium text-white border border-gray-200 rtl:text-left focus:text-blue hover:bg-gray hover:bg-gray-300 hover:text-blue" data-accordion-target="#accordion-arrow-icon-body-2" aria-expanded="false" aria-controls="accordion-arrow-icon-body-2">
                                 <i class="fa-solid fa-circle-plus"></i>
-                                <span class="ml-2">Accordion with another icon</span>
+                                <span class="ml-2 text-left">Bagaimana cara admin melakukan setup awal semester di AcaSync?</span>
                             </button>
                         </h2>
                         <div id="accordion-arrow-icon-body-2" class="hidden" aria-labelledby="accordion-arrow-icon-heading-2">
                             <div class="p-5 bg-gray-100 border border-gray-200">
-                            <p class="mb-2">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p>Check out the <a href="https://flowbite.com/figma/" class="hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                            <p class="mb-2 text-justify">Admin perlu menginput semua kelas dan mata pelajaran yang akan dipelajari dalam instansi pendidikan. Setelah itu, admin mengundang guru, memberikan hak akses sesuai dengan kelas dan mata pelajaran yang diajar atau diwali oleh guru tersebut. Pastikan admin sudah membuat workspace terlebih dahulu di website AcaSync.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="accordion-arrow-icon-3" class="rounded" data-accordion="open"intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
+                <div id="accordion-arrow-icon-3" class="rounded mb-2" data-accordion="open"intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
                     <div>
                         <h2 id="accordion-arrow-icon-heading-3" class="text-white focus:text-blue">
                             <button type="button" class="flex items-center w-full p-5 font-medium text-white border border-gray-200 rtl:text-left focus:text-blue hover:bg-gray hover:bg-gray-300 hover:text-blue" data-accordion-target="#accordion-arrow-icon-body-3" aria-expanded="false" aria-controls="accordion-arrow-icon-body-3">
                                 <i class="fa-solid fa-circle-plus"></i>
-                                <span class="ml-2">Accordion with another icon</span>
+                                <span class="ml-2 text-left">Bagaimana cara peserta didik melakukan pendaftaran di AcaSync?</span>
                             </button>
                         </h2>
                         <div id="accordion-arrow-icon-body-3" class="hidden" aria-labelledby="accordion-arrow-icon-heading-3">
                             <div class="p-5 bg-gray-100 border border-gray-200">
-                            <p class="mb-2">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p>Check out the <a href="https://flowbite.com/figma/" class="hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                            <p class="mb-2 text-justify">Peserta didik melakukan administrasi daftar ulang secara luring. Setelah berkas diperiksa dan disetujui oleh admin, ada dua alternatif yang dilakukan. Pertama, admin akan menginput email murid dan orang tua ke dalam workspace sekolah untuk pemetaan kelas. Kedua, peserta didik dapat langsung mendaftar akun pada website AcaSync kemudian gabung ke workspace sekolah dengan kode akses yang diberikan kepada admin selanjutnya admin akan melakukan pengaitan akun peserta didik dan orang tua.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="accordion-arrow-icon-4" class="rounded" data-accordion="open"intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
+                <div id="accordion-arrow-icon-4" class="rounded mb-2" data-accordion="open"intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
                     <div>
                         <h2 id="accordion-arrow-icon-heading-4" class="text-white focus:text-blue">
                             <button type="button" class="flex items-center w-full p-5 font-medium text-white border border-gray-200 rtl:text-left focus:text-blue hover:bg-gray hover:bg-gray-300 hover:text-blue" data-accordion-target="#accordion-arrow-icon-body-4" aria-expanded="false" aria-controls="accordion-arrow-icon-body-4">
                                 <i class="fa-solid fa-circle-plus"></i>
-                                <span class="ml-2">Accordion with another icon</span>
+                                <span class="ml-2 text-left">Bagaimana orang tua dapat memantau aktivitas belajar anak mereka?</span>
                             </button>
                         </h2>
                         <div id="accordion-arrow-icon-body-4" class="hidden" aria-labelledby="accordion-arrow-icon-heading-4">
                             <div class="p-5 bg-gray-100 border border-gray-200">
-                            <p class="mb-2">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p>Check out the <a href="https://flowbite.com/figma/" class="hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                            <p class="mb-2 text-justify">Orang tua akan mendapatkan notifikasi pengingat tugas yang belum dikerjakan oleh siswa dan dapat memonitor setiap aktivitas pembelajaran melalui aplikasi AcaSync. Mereka juga dapat melihat nilai tugas dan perkembangan akademik anak mereka.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="accordion-arrow-icon-5" class="rounded" data-accordion="open"intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
-                    <div>
-                        <h2 id="accordion-arrow-icon-heading-5" class="text-white focus:text-blue">
-                            <button type="button" class="flex items-center w-full p-5 font-medium text-white border border-gray-200 rtl:text-left focus:text-blue hover:bg-gray hover:bg-gray-300 hover:text-blue" data-accordion-target="#accordion-arrow-icon-body-5" aria-expanded="false" aria-controls="accordion-arrow-icon-body-5">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <span class="ml-2">Accordion with another icon</span>
-                            </button>
-                        </h2>
-                        <div id="accordion-arrow-icon-body-5" class="hidden" aria-labelledby="accordion-arrow-icon-heading-5">
-                            <div class="p-5 bg-gray-100 border border-gray-200">
-                            <p class="mb-2">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p>Check out the <a href="https://flowbite.com/figma/" class="hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="accordion-arrow-icon-6" class="rounded" data-accordion="open"intersect="animate-flip-down animate-ease-out animate-duration-[900ms] animate-delay-300">
-                    <div>
-                        <h2 id="accordion-arrow-icon-heading-6" class="text-white focus:text-blue">
-                            <button type="button" class="flex items-center w-full p-5 font-medium text-white border border-gray-200 rtl:text-left focus:text-blue hover:bg-gray-300 hover:text-blue" data-accordion-target="#accordion-arrow-icon-body-6" aria-expanded="false" aria-controls="accordion-arrow-icon-body-6">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                <span class="ml-2">Accordion with another icon</span>
-                            </button>
-                        </h2>
-                        <div id="accordion-arrow-icon-body-6" class="hidden" aria-labelledby="accordion-arrow-icon-heading-6">
-                            <div class="p-5 bg-gray-100 border border-gray-200">
-                            <p class="mb-2">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                            <p>Check out the <a href="https://flowbite.com/figma/" class="hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
