@@ -1,13 +1,14 @@
 @props([
     'active' => false,
+    'class' => '',
     'style' => '',
     'role' => ''
 ])
 
 @php
     $classess = ($active ?? false)
-                ? $style
-                : '';
+                ? $class
+                : $style;
 @endphp
 
-<a wire:navigate {{ $attributes->merge(['class' => $style, 'role' => $role]) }}>{{ $slot }}</a>
+<a wire:navigate {{ $attributes->merge(['class' => $classess,  'role' => $role]) }}>{{ $slot }}</a>

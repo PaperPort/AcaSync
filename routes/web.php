@@ -1,6 +1,4 @@
 <?php
-
-use App\Http\Controllers\front_page\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 

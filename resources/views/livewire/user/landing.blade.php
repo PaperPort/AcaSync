@@ -1,7 +1,7 @@
 <div>
     <x-header.user-navigation/>
     <section class="bg-blue" id="banner">
-        <div class="flex flex-col max-w-screen-xl px-4 pt-32 pb-20 mx-auto">
+        <div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-20 mx-auto">
             <h1 class="px-4 mb-2 text-lg font-extrabold leading-none tracking-tight text-white font-heading">Hai, Bonnie Green</h1>
             <p class="px-4 text-sm font-light text-white font-default">Apa yang akan kamu lakukan hari ini?</p>
         </div>
