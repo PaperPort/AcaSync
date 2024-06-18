@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('alamat')->nullable();
             $table->string('provinsi')->nullable();
             $table->string('kabupaten')->nullable();
+            $table->string('kode_akses');
             $table->timestamps();
         });
     }

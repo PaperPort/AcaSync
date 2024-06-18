@@ -8,8 +8,18 @@ use Livewire\Component;
 #[Title('Info Workspace')]
 class InfoWorkspace extends Component
 {
+    public $view = 'index';
     public function render()
     {
-        return view('livewire.user.admin.info-workspace');
+        switch ($this->view) {
+            case 'edit':
+                return view('livewire.user.admin.info-workspace.edit');
+                break;
+            
+            default:
+                return view('livewire.user.admin.info-workspace.index');
+                break;
+        }
+        
     }
 }

@@ -14,4 +14,8 @@ class Workspace extends Model
         'provinsi',
         'kabupaten'
     ];
+
+    protected $hidden = [
+        'kode_akses'
+    ];
 }

@@ -30,7 +30,7 @@ Route::get('/id-workspace/dashboard', \App\Livewire\User\Dashboard::class)->name
 Route::get('/id-workspace/dashboard-2', \App\Livewire\User\Murid\Dashboard::class)->name('dashboard-murid');
 
 // Admin Area
-Route::get('/id-workspace/info-workspace', \App\Livewire\User\Admin\InfoWorkspace::class)->name('info-workspace');
+Route::get('/id-workspace/info-workspace/{view?}', \App\Livewire\User\Admin\InfoWorkspace::class)->name('info-workspace');
 Route::get('/id-workspace/anggota', \App\Livewire\User\Admin\Anggota::class)->name('anggota-workspace');
 Route::get('/id-workspace/role', \App\Livewire\User\Admin\Role::class)->name('role-workspace');
 Route::get('/id-workspace/kelas', \App\Livewire\User\Admin\Kelas::class)->name('kelas-workspace');

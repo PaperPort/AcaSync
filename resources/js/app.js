@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 // clipboard
-document.addEventListener('livewire:loaded', () => {
+document.addEventListener('livewire:navigated', () => {
   const clipboard = new Clipboard('.btn');
   const button = document.getElementById('copy-button');
   const tooltip = document.getElementById('tooltip');
@@ -46,7 +46,7 @@ document.addEventListener('livewire:loaded', () => {
   });
 });
 
-document.addEventListener('livewire:loaded', () => {
+document.addEventListener('livewire:navigated', () => {
   const editButton = document.getElementById('editButton');
   const fileInput = document.getElementById('fileInput');
   const profileImage = document.getElementById('profileImage');
