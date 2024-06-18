@@ -21,18 +21,25 @@
     </section>
     <section id="profile-workspace" class="mt-10">
         <div class="grid w-full lg:grid-cols-3 lg:gap-x-4 lg:gap-y-3 font-default">
-            <div class="p-4 my-3 bg-white border border-gray-300 rounded-lg shadow lg:my-0 lg:content-center">
+            <div class="p-4 my-3 bg-white border border-gray-300 rounded-lg shadow flex flex-col items-center lg:my-0 lg:justify-center">
                 <div class="relative lg:flex lg:flex-col lg:items-center">
                     <img class="rounded w-36 h-36" id="profileImage" src="{{ URL::to('/') }}/img/default-profile.png" alt="default photo">
                 </div>
-                <div class="px-5 mb-5">
-                    <p class="text-xs text-gray-500">Workspace ID</p>
-                    <div class="flex mb-5 bg-transparent">
-                        <input type="text" value="0987654321" class="w-full p-2 text-gray-800 bg-transparent border-none" id="copy-text" readonly>
-                        <button class="relative p-2 rounded btn text-blue" data-clipboard-target="#copy-text">
-                            <i class="fa-solid fa-clipboard"></i>
-                            <span id="tooltip" class="absolute hidden p-2 text-white transform -translate-x-1/2 bg-gray-500 rounded tooltip -top-10 left-1/2">
-                                Copied!
+                <div class="mb-5">
+                    <div class="grid grid-cols-3 gap-2 mb-5 bg-transparent">
+                        <div class="col-span-2">
+                            <x-form.input wire:model='workspace_id' name="workspace_id" :readonly='true' id="copy-button">
+                                Workspace ID
+                            </x-form.input>
+                        </div>
+                        <button data-copy-to-clipboard-target="copy-button" class="font-default text-white bg-blue hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm p-2.5 text-center items-center inline-flex justify-center mt-7">
+                            <span id="default-message">
+                                <i class="fa-regular fa-copy w-3 h-3 text-white"></i>
+                            </span>
+                            <span id="success-message" class="hidden inline-flex items-center">
+                                <svg class="w-3 h-3 text-whit" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                                </svg>
                             </span>
                         </button>
                     </div>

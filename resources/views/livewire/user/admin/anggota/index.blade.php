@@ -45,10 +45,10 @@
                         </form>
                     </div>
                     <div class="flex flex-col items-stretch justify-end flex-shrink-0 w-full space-y-2 md:w-auto md:flex-row md:space-y-0 md:items-center md:space-x-3">
-                        <button type="button" class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue hover:bg-sky focus:ring-4 focus:ring-blue focus:outline-none">
+                        <x-header.link href=" {{ route('anggota-workspace', ['view' => 'create']) }} " style="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue hover:bg-sky focus:ring-4 focus:ring-blue focus:outline-none">
                             <i class="mr-2 fa-solid fa-user-plus"></i>
                             Tambah Anggota
-                        </button>
+                        </x-header.link>
                         <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg md:w-auto focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-4 h-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
@@ -116,79 +116,79 @@
                                 <td class="px-4 py-3">Luffy</td>
                                 <td class="px-4 py-3">
                                     <span class="bg-blue text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Admin</span>
-                                    {{-- <span class="bg-orange text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Guru - Mata Pelajaran</span>
-                                    <span class="bg-yellow text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Wali Kelas</span>
-                                    <span class="bg-sky text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Murid</span>
-                                    <span class="bg-amber text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Orang Tua</span> --}}
                                 </td>
-                                <td>
-                                    <button type="button" class="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-circle-info"></i></button>
-                                    <button type="button" class="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-pencil"></i></button>
-                                    <button type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></button>
+                                <td class="flex flex-col md:flex-row">
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'detail']) }}" style="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'edit']) }}" style="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'delete']) }}" style="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></x-header.link>
                                 </td>
                             </tr>
                             <tr class="border-b">
                                 <th class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">2</th>
                                 <td class="px-4 py-3">Zoro</td>
                                 <td class="px-4 py-3">
-                                    {{-- <span class="bg-blue text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Admin</span> --}}
                                     <span class="bg-orange text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Guru - Mata Pelajaran</span>
-                                    {{-- <span class="bg-yellow text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Wali Kelas</span>
-                                    <span class="bg-sky text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Murid</span>
-                                    <span class="bg-amber text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Orang Tua</span> --}}
                                 </td>
-                                <td>
-                                    <button type="button" class="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-circle-info"></i></button>
-                                    <button type="button" class="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-pencil"></i></button>
-                                    <button type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></button>
+                                <td class="flex flex-col md:flex-row">
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'detail']) }}" style="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'edit']) }}" style="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'delete']) }}" style="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></x-header.link>
                                 </td>
                             </tr>
                             <tr class="border-b">
                                 <th class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">3</th>
                                 <td class="px-4 py-3">Nami</td>
                                 <td class="px-4 py-3">
-                                    {{-- <span class="bg-blue text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Admin</span>
-                                    <span class="bg-orange text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Guru - Mata Pelajaran</span> --}}
                                     <span class="bg-yellow text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Wali Kelas</span>
-                                    {{-- <span class="bg-sky text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Murid</span>
-                                    <span class="bg-amber text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Orang Tua</span> --}}
                                 </td>
-                                <td>
-                                    <button type="button" class="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-circle-info"></i></button>
-                                    <button type="button" class="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-pencil"></i></button>
-                                    <button type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></button>
+                                <td class="flex flex-col md:flex-row">
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'detail']) }}" style="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'edit']) }}" style="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'delete']) }}" style="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></x-header.link>
                                 </td>
                             </tr>
                             <tr class="border-b">
                                 <th class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">4</th>
                                 <td class="px-4 py-3">Usopp</td>
                                 <td class="px-4 py-3">
-                                    {{-- <span class="bg-blue text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Admin</span>
-                                    <span class="bg-orange text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Guru - Mata Pelajaran</span>
-                                    <span class="bg-yellow text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Wali Kelas</span> --}}
                                     <span class="bg-sky text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Murid</span>
-                                    {{-- <span class="bg-amber text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Orang Tua</span> --}}
                                 </td>
-                                <td>
-                                    <button type="button" class="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-circle-info"></i></button>
-                                    <button type="button" class="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-pencil"></i></button>
-                                    <button type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></button>
+                                <td class="flex flex-col md:flex-row">
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'detail']) }}" style="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'edit']) }}" style="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'delete']) }}" style="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></x-header.link>
                                 </td>
                             </tr>
                             <tr class="border-b">
                                 <th class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">5</th>
                                 <td class="px-4 py-3">Sanji</td>
                                 <td class="px-4 py-3">
-                                    {{-- <span class="bg-blue text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Admin</span>
-                                    <span class="bg-orange text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Guru - Mata Pelajaran</span>
-                                    <span class="bg-yellow text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Wali Kelas</span>
-                                    <span class="bg-sky text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Murid</span> --}}
                                     <span class="bg-amber text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">Orang Tua</span>
                                 </td>
-                                <td>
-                                    <button type="button" class="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-circle-info"></i></button>
-                                    <button type="button" class="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-pencil"></i></button>
-                                    <button type="button" class="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></button>
+                                <td class="flex flex-col md:flex-row">
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'detail']) }}" style="text-sky hover:text-white border border-sky hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'edit']) }}" style="text-yellow hover:text-white border border-yellow hover:bg-yellow focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </x-header.link>
+                                    <x-header.link href="{{ route('anggota-workspace', ['view' => 'delete']) }}" style="text-red-500 hover:text-white border border-red-500 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><i class="fa-solid fa-trash"></i></x-header.link>
                                 </td>
                             </tr>
                         </tbody>
