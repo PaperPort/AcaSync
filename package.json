@@ -6,6 +6,7 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@tailwindcss/forms": "^0.5.7",
         "autoprefixer": "^10.4.19",
         "axios": "^1.6.4",
         "flowbite": "^2.3.0",
@@ -16,10 +17,13 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.5.2",
+        "@preline/remove-element": "^2.3.0",
+        "@preline/select": "^2.4.1",
         "clipboard": "^2.0.11",
         "jquery": "^3.7.1",
         "material-icons": "^1.13.12",
         "material-symbols": "^0.20.0",
+        "preline": "^2.3.0",
         "tailwindcss-animated": "^1.0.1"
     }
 }
