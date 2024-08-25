@@ -1,13 +1,20 @@
+import 'preline';
 import Clipboard from 'clipboard';
 import 'flowbite';
+// import 'preline/dist/preline';
+// import { HSSelect } from 'preline';
 import { initFlowbite } from 'flowbite';
 import jQuery from 'jquery';
 window.$ = jQuery;
 
+
 document.addEventListener('livewire:navigated', () => {
   initFlowbite();
+  window.HSStaticMethods.autoInit();
+  HSSelect.autoInit();
   clipboard();
-})
+});
+
 
 // intersect animation
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,53 +73,35 @@ function clipboard (){
 
 document.addEventListener('livewire:navigated', () => {
   const editButton = document.getElementById('editButton');
-  const fileInput = document.getElementById('fileInput');
-  const profileImage = document.getElementById('profileImage');
+    const fileInput = document.getElementById('fileInput');
+    const profileImage = document.getElementById('profileImage');
 
-  editButton.addEventListener('click', () => {
-      fileInput.click();
-  });
+    editButton.addEventListener('click', () => {
+        fileInput.click();
+    });
 
-  fileInput.addEventListener('change', (event) => {
-      const file = event.target.files[0];
-      if (file) {
-          const reader = new FileReader();
-          reader.onload = (e) => {
-              profileImage.src = e.target.result;
-          };
-          reader.readAsDataURL(file);
-      }
-  });
+    fileInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profileImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
 });
 
 document.addEventListener('livewire:navigated', function () {
-  const textarea = document.getElementById('tags');
-  const tagContainer = document.getElementById('tag-textarea');
-
-  textarea.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter') {
-          event.preventDefault();
-          const value = textarea.value.trim();
-          if (value) {
-              addTag(value);
-              textarea.value = '';
+  Livewire.on('tab-change', tab => {
+      document.querySelectorAll('[data-tabs-toggle] [role="tab"]').forEach(tabElement => {
+          if (tabElement.dataset.tabsTarget === `#${tab}`) {
+              tabElement.classList.add('text-white', 'bg-blue');
+              tabElement.classList.remove('hover:text-sky', 'hover:bg-white', 'hover:border-none');
+          } else {
+              tabElement.classList.remove('text-white', 'bg-blue');
+              tabElement.classList.add('hover:text-sky', 'hover:bg-white', 'hover:border-none');
           }
-      }
-  });
-
-  function addTag(value) {
-      const tag = document.createElement('span');
-      tag.className = 'flex items-center text-sm font-medium text-gray-700 bg-gray-200 rounded-md px-2 py-1 m-1';
-      tag.textContent = value;
-
-      const closeButton = document.createElement('button');
-      closeButton.className = 'ml-2 text-gray-500 hover:text-gray-700';
-      closeButton.innerHTML = '&times;';
-      closeButton.addEventListener('click', function () {
-          tagContainer.removeChild(tag);
       });
-
-      tag.appendChild(closeButton);
-      tagContainer.appendChild(tag);
-  }
+  });
 });

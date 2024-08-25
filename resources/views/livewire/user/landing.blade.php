@@ -1,8 +1,8 @@
 <div>
-    <x-header.user-navigation/>
+    <x-header.user-navigation :user="$user"/>
     <section class="bg-blue" id="banner">
         <div class="flex flex-col max-w-screen-xl px-4 pt-20 pb-20 mx-auto">
-            <h1 class="px-4 mb-2 text-lg font-extrabold leading-none tracking-tight text-white font-heading">Hai, Bonnie Green</h1>
+            <h1 class="px-4 mb-2 text-lg font-extrabold leading-none tracking-tight text-white font-heading">Hai, {{ $user->name }}</h1>
             <p class="px-4 text-sm font-light text-white font-default">Apa yang akan kamu lakukan hari ini?</p>
         </div>
     </section>
@@ -17,24 +17,18 @@
     </section>
 
     <section id="card-workspace" class="max-w-screen-xl px-4 mx-auto my-5 ">
-        <div class="w-full p-5 bg-white border border-gray-200 rounded-lg shadow">
-            <div class="flex flex-col">
-                <div class="flex items-center gap-2">
-                    <img class="h-24 mb-3 shadow-lg" src="{{ URL::to('/') }}/img/school-bg.png" alt="Bonnie image"/>
-                    <div class="flex flex-col ml-2">
-                        <h5 class="mb-1 text-xl font-medium text-gray-900">Academic University</h5>
-                        <span class="text-sm text-gray-500">Indonesia</span>
-                    </div>
-                    
-                </div>
-                <div class="flex justify-end pt-2 mt-4 border-t-2 border-gray-200 md:mt-6">
-                    <x-header.link href="{{'/id-workspace/dashboard'}}" style="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white rounded-lg bg-blue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Masuk</x-header.link>
-                </div>
-            </div>
-        </div>
+        @if ($user_workspace)
+            @foreach ($user_workspace as $data)
+            @php
+                $shortID = substr($data['workspace']['user']['user_id'], 0,8);
+            @endphp
+                <x-card.workspace-card title="{{ $data['workspace']['user']['name'] }}" content="{{ $data['workspace']['provinsi'] }}" src="{{ $data['workspace']['user']['profile'] }}" link="{{ route('dashboard-user', ['workspace_id'=> $shortID, 'user_id'=> $userShort ]) }}" id="{{ $data['workspace_id'] }}"></x-card.workspace-card>
+            @endforeach
+        @else
+            <x-card.blank-card>Tidak ada yang diikuti</x-card.blank-card>
+        @endif
     </section>
 
-    <x-card.blank-card class="hidden"/>
 
     <x-footer.user-footer/>
 </div>
