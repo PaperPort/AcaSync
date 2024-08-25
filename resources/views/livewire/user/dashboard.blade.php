@@ -1,5 +1,5 @@
 <div>
-    <x-header.dashboard-navigation/>
+    <x-header.dashboard-navigation workspace_id="{{ $shortID }}"/>
     <section class="flex justify-end pr-3 pt-5" aria-label="Breadcrumb" id="breadcumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center" aria-current="page">
