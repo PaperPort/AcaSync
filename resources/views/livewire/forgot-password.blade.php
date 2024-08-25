@@ -8,12 +8,20 @@
                             Lupa Kata Sandi?
                         </h1>
                         <p class="font-light text-gray-400 text-center text-sm">Masukkan email yang telah terdaftar di AcaSync dan kami akan mengirimkan instruksi untuk mengganti kata sandi Anda.</p>
-                        <form class="space-y-4 md:space-y-6 font-default" action="#">
+                        <x-alerts.alerts></x-alerts.alerts>
+                        <form class="space-y-4 md:space-y-6 font-default" wire:submit='forgotPass'>
                             <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
-                                <input type="email" name="email" id="email" class="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue focus:border-blue block w-full p-2.5" placeholder="name@gmail.com" required autocomplete="off">
+                                <x-form.input type="email" wire:model='email' placeholder="name@gmail.com" name="email">
+                                    Email
+                                </x-form.input>
+                                @error('email')
+                                    <small class="mt-1 text-red-700">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <button type="submit" class="w-full text-white bg-blue hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center">Kirim</button>
+                            <button type="submit" class="w-full text-white bg-blue hover:bg-sky focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                <span wire:loading.remove wire:target="forgotPass">Kirim E-mail</span>
+                                <span wire:loading wire:target="forgotPass">Loading...</span>
+                            </button>
                         </form>
                     </div>
                 </div>
