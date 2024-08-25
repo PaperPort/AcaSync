@@ -1,5 +1,8 @@
 <div>
-    <x-header.dashboard-navigation/>
+    @php
+        // dd($is_active);
+    @endphp
+    <x-header.dashboard-navigation workspace_id="{{ $shortID }}"/>
     <section class="pt-5 pr-3 md:flex md:justify-between" aria-label="Breadcrumb" id="breadcumb">
         <h1 class="text-xl font-heading text-blue">Detail Anggota</h1>
         <ol class="hidden space-x-1 lg:inline-flex md:items-center md:space-x-2 rtl:space-x-reverse">
@@ -19,7 +22,7 @@
                 <svg class="w-3 h-3 mx-1 text-gray-400 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
-                <x-header.link href="{{ route('anggota-workspace') }}" style="text-sm font-medium text-gray-500 ms-1 md:ms-2 hover:text-blue">Pengaturan Anggota</x-header.link>
+                <x-header.link href="{{ route('anggota-workspace', ['workspace_id' => $shortID]) }}" style="text-sm font-medium text-gray-500 ms-1 md:ms-2 hover:text-blue">Pengaturan Anggota</x-header.link>
             </li>
             <li aria-current="page">
                 <div class="flex items-center">
@@ -39,25 +42,32 @@
                     <img class="rounded w-36 h-36" id="profileImage" src="{{ URL::to('/') }}/img/default-profile.png" alt="default photo">
                 </div>
                 <div class="mb-5 w-full">
-                    <h6 class="w-full flex justify-center font-heading font-bold">Monkey D Luffy</h6>
-                    <p class="text-gray-700 font-light flex justify-center text-sm mb-5">Admin</p>
-
+                    <h6 class="w-full flex justify-center font-heading font-bold">{{ $editNama }}</h6>
+                    <p class="text-gray-700 font-light flex justify-center text-sm mb-5">{{ $namaRole }}</p>
+                    @if ($is_active != null)
                     <div class="border-t-2 border-gray-200 grid grid-cols-2 p-4">
                         <div>
-                            <h6 class="font-heading">NISN/NIP</h6>
+                            <h6 class="font-heading">Nomor Induk</h6>
                         </div>
                         <div class="flex justify-end">
-                            <p class="text-gray-700 font-light text-sm">0981293789</p>
+                            <p class="text-gray-700 font-light text-sm">{{ $nomorInduk }}</p>
                         </div>
                     </div>
                     <div class="border-y-2 border-gray-200 grid grid-cols-2 p-4 text-sm">
                         <div>
-                            <h6 class="font-heading">E-mail</h6>
+                            <h6 class="font-heading">Status Anggota</h6>
                         </div>
                         <div class="flex justify-end">
-                            <p class="text-gray-700 font-light text-sm">nikuuuuu@gmail.com</p>
+                            <p class="text-gray-700 font-light text-sm">
+                                @if ($is_active == 0)
+                                    Nonaktif
+                                @else
+                                    Aktif
+                                @endif
+                            </p>
                         </div>
                     </div>
+                    @endif
                 </div>
                 
             </div>

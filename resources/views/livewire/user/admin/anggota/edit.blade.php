@@ -1,5 +1,8 @@
 <div>
-    <x-header.dashboard-navigation/>
+    @php
+        // dd($editRole);
+    @endphp
+    <x-header.dashboard-navigation workspace_id="{{ $shortID }}"/>
     <section class="pt-5 pr-3 md:flex md:justify-between" aria-label="Breadcrumb" id="breadcumb">
         <h1 class="text-xl font-heading text-blue">Edit Anggota</h1>
         <ol class="hidden space-x-1 lg:inline-flex md:items-center md:space-x-2 rtl:space-x-reverse">
@@ -19,7 +22,7 @@
                 <svg class="w-3 h-3 mx-1 text-gray-400 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                 </svg>
-                <x-header.link href="{{ route('anggota-workspace') }}" style="text-sm font-medium text-gray-500 ms-1 md:ms-2 hover:text-blue">Pengaturan Anggota</x-header.link>
+                <x-header.link href="{{ route('anggota-workspace',  ['workspace_id' => $shortID]) }}" style="text-sm font-medium text-gray-500 ms-1 md:ms-2 hover:text-blue">Pengaturan Anggota</x-header.link>
             </li>
             <li aria-current="page">
                 <div class="flex items-center">
@@ -32,32 +35,53 @@
         </ol>
     </section>
     <section id="edit-anggota" class="w-full mt-10">
-        <div class="max-w-screen-xl mx-auto bg-white border border-gray-300 rounded-lg shadow p-4">
-            <form class="px-4 mt-4">
-                <div class="mb-5">
-                    <x-form.input wire:model='email' type="email" name="email">
-                        E-mail
-                    </x-form.input>
+        
+        <x-alerts.alerts></x-alerts.alerts>
+        <div class="max-w-screen-xl p-4 mx-auto bg-white border border-gray-300 rounded-lg shadow">
+            <form class="px-4 mt-4" wire:submit='updateData'>
+                <div class="lg:grid lg:grid-cols-2 lg:gap-4 font-default">
+                    <input type="hidden" name="user_id" wire:model='user_id'>
+                    <div class="mb-5 lg:col-start-1 lg:col-end-3">
+                        <x-form.input id="editNama" wire:model='editNama' type="text" name="editNama" :readonly='true'>
+                            Nama
+                        </x-form.input>
+                        @error('editNama') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    <div class="mb-5 lg:col-start-1 lg:col-end-3">
+                        <x-form.input id="editEmail" wire:model='editEmail' type="text" name="editEmail" :readonly='true'>
+                            E-mail
+                        </x-form.input>
+                        @error('editEmail') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+
+                    @if ($is_active == null)
+                    <div class="mb-5 lg:col-start-1 lg:col-end-3">
+                    @else
+                    <div class="mb-5">
+                    @endif
+                        <x-form.select wire:model='editRole' name="role" :option="$role" :selected="$editRole">
+                            Role
+                        </x-form.select>
+                        @error('editRole') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    @if ($is_active != null)
+                    <div class="mb-5">
+                        <x-form.select wire:model='is_active' name="active" :option="$active" :selected="$is_active">
+                            Status Anggota
+                        </x-form.select>
+                        @error('is_active') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    @endif
+                    @if ($kaitAkun)
+                    <div class="mb-5 lg:col-start-1 lg:col-end-3">
+                        <x-form.select id="selectedKait" wire:model='selectedKait' type="text" name="selectedKait" :option='$kaitAkun' search :selected="$selectedKait">
+                            @if ($editRole == '5') Akun Orang Tua @elseif ($editRole == '4')  Akun Peserta Didik @endif
+                        </x-form.select>
+                        @error('orangtua_id') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                    @endif
                 </div>
-
-                {{-- Contoh Option --}}
-                @php
-                    $option = [
-                        '0' => 'Pilih',
-                        '1' => 'A',
-                        '2' => 'B',
-                        '3' => 'C',
-                        '4' => 'D',
-                    ];
-                @endphp
-
-                <div class="mb-8">
-                    <x-form.select wire:model='role' name="role" :option="$option">
-                        Role
-                    </x-form.select>
-                </div>
-
-                <div class="w-full flex justify-end border-t-2 border-gray-200 pt-5">
+                <div class="flex justify-end w-full pt-5 border-t-2 border-gray-200">
                     <button type="submit" class="text-white bg-yellow hover:bg-orange focus:ring-4 focus:ring-yellow font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
                         Ubah Data
                     </button>
