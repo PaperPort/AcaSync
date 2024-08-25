@@ -5,6 +5,8 @@ namespace App\Livewire;
 use App\Mail\SendVerifRegisAcc;
 use App\Models\User;
 use App\Models\Workspace;
+use App\Models\UserWorkspace;
+use App\Models\RoleWorkspace;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -32,11 +34,30 @@ class RegisterWorkspace extends Component
             'name'              => $this->nama_workspace,
             'email'             => $this->email,
             'password'          => Hash::make($this->password),
-            'verification_token'=> Str::random(32)
+            'verification_token'=> Str::random(32),
+            'email_verified_at' => null,
+            'profile'           => null,
+            'remember_token'    => null,
+            'created_at'        => now(),
         ]);
 
         $workspace = Workspace::create([
             'user_id'       => $user->id,
+            'kode_akses'    => Str::random(16)
+        ]);
+
+        for ($i=1; $i < 5; $i++) { 
+            $rw = RoleWorkspace::create([
+                'workspace_id'  => $workspace->id,
+                'role_id'       => $i
+            ]);
+        }
+
+        $userWorkspace = UserWorkspace::create([
+            'workspace_id'  => $workspace->id,
+            'user_id'       => $user->id,
+            'detailUser_id' => null,
+            'rw_id'         => 1
         ]);
 
         try {

@@ -32,9 +32,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 </html>
-
-{{-- <div>
-    
-    <p>Terima kasih telah mendaftar. Klik link di bawah ini untuk verifikasi akun Anda:</p>
-    <p><a href="{{ url('/verify-email/'.$token) }}">Verifikasi Email</a></p>
-</div> --}}

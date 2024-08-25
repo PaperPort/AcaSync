@@ -32,7 +32,11 @@ class RegisterAccount extends Component
             'name'              => $this->nama_lengkap,
             'email'             => $this->email,
             'password'          => Hash::make($this->password),
-            'verification_token'=> Str::random(32)
+            'verification_token'=> Str::random(32),
+            'email_verified_at' => null,
+            'profile'           => null,
+            'remember_token'    => null,
+            'created_at'        => now(),
         ]);
 
         try {
