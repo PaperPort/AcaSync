@@ -32,4 +32,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function userworkspaces() {
+        return $this->hasMany(UserWorkspace::class, 'user_id');
+    }
 }

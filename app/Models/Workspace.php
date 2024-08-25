@@ -12,10 +12,11 @@ class Workspace extends Model
         'user_id',
         'alamat',
         'provinsi',
-        'kabupaten'
-    ];
-
-    protected $hidden = [
+        'kabupaten',
         'kode_akses'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
