@@ -1,3 +1,6 @@
+@props([
+    'user'
+])
 <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200">
     <div class="px-3 py-3 lg:px-5">
         <div class="flex items-center justify-between">
@@ -11,16 +14,20 @@
                     <div>
                         <button type="button" class="flex text-sm rounded-full md:me-0 focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                             <span class="sr-only">Open user menu</span>
-                            <img class="w-8 h-8 rounded-full" src="{{ URL::to('/') }}/img/default-profile.png" alt="default photo">
+                            @if ($user->profile)
+                            <img class="w-8 h-8 rounded-full" src="{{ asset('storage/' . $user->profile) }}" alt="{{ $user->name .' photo' }}">
+                            @else
+                            <img class="w-8 h-8 rounded-full" src="{{ asset('storage/picture_profiles/default-profile.png') }}" alt="default photo">
+                            @endif
                         </button>
                     </div>
                     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow" id="user-dropdown">
                         <div class="px-4 py-3" role="none">
                             <p class="text-sm text-gray-900" role="none">
-                                Bonnie Green
+                                {{ $user->name }}
                             </p>
                             <p class="text-sm font-medium text-gray-900 truncate" role="none">
-                                name@acasync.com
+                                {{ $user->email }}
                             </p>
                         </div>
                         <ul class="py-1" role="none">

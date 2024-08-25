@@ -1,3 +1,7 @@
+@props([
+    'workspace_id'
+])
+
 <nav class="bg-white border-b border-gray-200 px-4 py-2.5 fixed left-0 right-0 top-0 z-50 w-full">
     <div class="flex flex-wrap items-center justify-between">
         <div class="flex items-center justify-start">
@@ -52,7 +56,7 @@
                         <x-header.link href="{{ '/personal-profile' }}" style="block px-4 py-2 text-sm hover:bg-gray-100">Pengaturan Profil</x-header.link>
                     </li>
                     <li>
-                        <x-header.link href="{{ '/logout' }}" style="block px-4 py-2 text-sm hover:bg-gray-100">Keluar</x-header.link>
+                        <x-header.link href="{{ route('logout') }}" style="block px-4 py-2 text-sm hover:bg-gray-100">Keluar</x-header.link>
                     </li>
                 </ul>
             </div>
@@ -64,13 +68,13 @@
     <div class="h-full px-3 py-5 overflow-y-auto bg-white ">
         <ul class="space-y-2">
             <li>
-                <x-header.sidebar-link :active="request()->routeIs('dashboard-workspace')" href="{{'/id-workspace/dashboard'}}">
+                <x-header.sidebar-link :active="request()->routeIs('dashboard-workspace')" href="{{route('dashboard-workspace', ['workspace_id' => $workspace_id ])}}">
                     <x-slot:icon>fa-solid fa-house-chimney</x-slot:icon>
                     Dashboard
                 </x-header.sidebar-link>
             </li>
             <li>
-                <x-header.sidebar-link :active="request()->routeIs('info-workspace')" href="{{'/id-workspace/info-workspace'}}">
+                <x-header.sidebar-link :active="request()->routeIs('info-workspace')" href="{{ route('info-workspace', ['workspace_id' => $workspace_id ]) }}">
                     <x-slot:icon>fa-solid fa-circle-info</x-slot:icon>
                     Info Workspace
                 </x-header.sidebar-link>
@@ -90,9 +94,9 @@
                         </x-header.link>
                     </li>
                     <li>
-                        <x-header.link :active="request()->routeIs('anggota-workspace')" href="{{'/id-workspace/anggota'}}" class="flex items-center w-full p-2 text-base font-medium text-white transition duration-75 rounded-lg pl-11 group hover:bg-sky bg-blue" style="flex items-center w-full p-2 text-base font-medium text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100">
+                        <x-header.link :active="request()->routeIs('anggota-workspace')" href="{{ route('anggota-workspace', ['workspace_id' => $workspace_id ]) }}" class="flex items-center w-full p-2 text-base font-medium text-white transition duration-75 rounded-lg pl-11 group hover:bg-sky bg-blue" style="flex items-center w-full p-2 text-base font-medium text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"> 
                             Pengaturan Anggota
-                        </x-header.link>
+                        </x-header.link> 
                     </li>
                 </ul>
             </li>
@@ -103,7 +107,7 @@
                 </x-header.sidebar-link>
             </li>
             <li>
-                <x-header.sidebar-link :active="request()->routeIs('kelas-workspace')" href="{{'/id-workspace/kelas'}}">
+                <x-header.sidebar-link :active="request()->routeIs('kelas-workspace')" href="{{ route('kelas-workspace', ['workspace_id' => $workspace_id ]) }}">
                     <x-slot:icon>fa-solid fa-chalkboard-user</x-slot:icon>
                     Kelas
                 </x-header.sidebar-link>
