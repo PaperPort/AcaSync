@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Mail\SendVerifRegisAcc;
+use App\Models\UserWorkspace;
 use App\Models\Workspace;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -43,11 +44,16 @@ class Login extends Component
                 flash('Anda perlu verifikasi email terlebih dahulu.', 'error');
             }else{
                 $workspace = Workspace::with('user')->where('user_id', $user->id)->first();
+                $role = UserWorkspace::where([
+                    ['workspace_id','=',$workspace->id],
+                    ['user_id', '=',$user->id]
+                ])->first();
                 if ($workspace) {
                     $shortID = substr($workspace->user->user_id, 0,8);
                     Session::put([
                         'shortID'  => $shortID,
-                        'id'       => $workspace->id
+                        'id'       => $workspace->id,
+                        'role_user' => $role->rw_id
                     ]);
                     return redirect()->route('dashboard-workspace', ['workspace_id'=> $shortID]);
                 }else{
